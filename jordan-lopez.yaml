@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jordan-lopez-techno
+  namespace: techno
+  annotations:
+    student-name: "Jordan Lopez"
+    music-preference: "Techno"
+spec:
+  containers:
+  - name: dj
+    image: nginx
+  tolerations:
+  - key: "music"
+    operator: "Equal"
+    value: "bass-boost"
+    effect: "NoSchedule"
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: style
+            operator: In
+            values:
+            - electronico

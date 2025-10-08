@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: juanp-charry-reggaeton
+  namespace: reggaeton
+  annotations:
+    student-name: "Juan Charry"
+    music-preference: "Reggaeton"
+spec:
+  containers:
+  - name: fiestero
+    image: nginx  
+  tolerations:
+  - key: "music"
+    operator: "Equal"
+    value: "perreo-intenso"
+    effect: "NoSchedule"
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: style
+            operator: In
+            values:
+            - urbano

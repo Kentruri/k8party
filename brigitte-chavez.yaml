@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: bri-fionaA-fan
+  name: bri-fiona-fan
   namespace: rock
   annotations: 
     student-name: "Brigitte Chavez"

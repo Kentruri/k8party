@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mel-mejia
+  namespace: salsa
+  annotations:
+    student-name: "Melissa Mejia"
+    music-preference: "Salsa, pop"
+spec:
+  containers:
+  - name: bailarin
+    image: nginx
+  tolerations:
+  - key: "music"
+    operator: "Equal"
+    value: "lebron-brothers"
+    effect: "NoSchedule"
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: style
+            operator: In
+            values:
+            - latino

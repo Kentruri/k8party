@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: venus-juliana-salsera
+  
+  namespace: salsa
+  
+  annotations:
+    student-name: "Venus Juliana"
+    music-preference: "Salsa, Baldosa"
+spec:
+  containers:
+  - name: salsera
+    image: nginx
+    
+  tolerations:
+  - key: "music"
+    operator: "Equal"
+    value: "las-claves"
+    effect: "NoSchedule"
+    
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: style
+            operator: In
+            values:
+            - salsita

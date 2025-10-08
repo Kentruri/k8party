@@ -13,7 +13,7 @@ spec:
   tolerations:
   - key: "music"
     operator: "Equal"
-    value: "lebron-brothers"
+    value: "sabor-latino" 
     effect: "NoSchedule"
   affinity:
     nodeAffinity:
